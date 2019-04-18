@@ -29,7 +29,7 @@ while i <= n:
     i = i + 1
     rechen_operator = ['+', '-', '/', '*']
     zufaellig = random.choice(rechen_operator)
-    print(zufaellig)
+    #print(zufaellig)
 
     ##Bei Addition, Subtraktion und Multiplikation werden ganze Zahlen zwischen 1 und 20 miteinander verknuepft.
     zahl_eins = random.randint(1, 20)
@@ -59,11 +59,11 @@ while i <= n:
                     ergebnis = zahl_eins + zahl_zwei
                     if eingabe_1 == ergebnis and eingabe_1 > 0:
                                 counter+=1
-                                prozent = counter // (1 * 100)
+                                prozent = (float(counter) / (i-1)) * 100
                                 print("Ihr Ergebnis ist richtig.", "\n", counter, "von ", str(i-1), "oder", prozent, "% Richtige")
                                 break
                     else:
-                                prozent = counter // 1 * 100
+                                prozent = (float(counter) / (i-1)) * 100
                                 print("Ihr Ergebnis ist falsch.", "\n", counter, "von ", str(i-1), "oder", prozent, "% Richtige")
                                 break
 
@@ -80,11 +80,11 @@ while i <= n:
                     ergebnis = zahl_eins - zahl_zwei
                     if eingabe_1 == ergebnis and eingabe_1:
                                 counter+=1
-                                prozent = counter // (1 * 100)
+                                prozent = (float(counter) / (i-1)) * 100
                                 print("Ihr Ergebnis ist richtig.", "\n", counter, "von ", str(i-1), "oder", prozent, "% Richtige")
                                 break
                     else:
-                                prozent = counter // 1 * 100
+                                prozent = (float(counter) / (i-1)) * 100
                                 print("Ihr Ergebnis ist falsch.", "\n", counter, "von ", str(i-1), "oder", prozent, "% R#ichtige")
                                 break
             ##Multiplikation
@@ -97,11 +97,11 @@ while i <= n:
                     ergebnis = zahl_eins * zahl_zwei
                     if eingabe_1 == ergebnis and eingabe_1:
                                 counter+=1
-                                prozent = counter // (1 * 100)
+                                prozent = (float(counter) / (i-1)) * 100
                                 print("Ihr Ergebnis ist richtig.", "\n", counter, "von ", str(i-1), "oder", prozent, "% Richtige")
                                 break
                     else:
-                                prozent = counter // 1 * 100
+                                prozent = (float(counter) / (i-1)) * 100
                                 print("Ihr Ergebnis ist falsch.", "\n", counter, "von ", str(i-1), "oder", prozent, "% Richtige")
                                 break
                             
@@ -114,18 +114,19 @@ while i <= n:
                     #eingabe_1 = int(input("Division: "))
                     ## Prfen ob, Eingabe grer ungleich null ist
                     ##if eingabe_1 != 0:
-                    ergebnis = zahl_eins / zahl_zwei
+                    ergebnis = float(zahl_eins) / zahl_zwei
                     if eingabe_1 == ergebnis and eingabe_1:
                                 counter+=1
-                                prozent = counter // (1 * 100)
+                                prozent = (float(counter) / (i-1)) * 100
                                 print("Ihr Ergebnis ist richtig.", "\n", counter, "von ", str(i-1), "oder", prozent, "% Richtige")
                                 break
                     else:
-                                prozent = counter // 1 * 100
+                                prozent = (float(counter) / (i-1)) * 100
                                 print("Ihr Ergebnis ist falsch.", "\n", counter, "von ", str(i-1), "oder", prozent, "% Richtige")
                                 break
     if eingabe_1 == 0:
         print("Das Rechentraining ist beendet.")
+        break
 ##else:
   ## print("Das Rechentraining ist beendet."
       ##   "\n", "Sie haben von 7 Aufgaben", prozent, "korrekt gelst") 
@@ -138,3 +139,4 @@ while i <= n:
     #natrliche Divison also Zhler ist ein Vielfaches vom Nenner -> Ergebnis ist ganze Zahl
         #nicht abrunden oder Nachkommastellen abschneiden
         #Division ohne Rest prfen mit 
+
